@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content = "width=device-width, initial-scale=1.0"></meta>
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></link>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body class="body">
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+	 <body>
+
+     <div class="container-fluid" style="min-height:100%">
+      
+      <div class="table_container">
+        <table id="serverside_table" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Column A</th>
+              <th>Column B</th>
+              <th>Column C</th>
+              <th>Column D</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+
+     </div>
+
+	 </body>
+</html>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#serverside_table').DataTable({
+      bProcessing: true,
+      bServerSide: true,
+      sPaginationType: "full_numbers",
+      lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]],
+      bjQueryUI: true,
+      sAjaxSource: '/tables/serverside_table',
+      columns: [
+        {"data": "A"},
+        {"data": "B"},
+        {"data": "C"},
+        {"data": "D"}
+      ]
+    });
+  });
+</script>
+
+
+
+
